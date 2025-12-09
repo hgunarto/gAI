@@ -1,0 +1,26 @@
+LAPORAN PROJECT AI
+Speech-to-Text (Pengenalan Suara) 1. Pendahuluan Artificial Intelligence (AI) semakin
+berkembang pesat dan banyak digunakan dalam aplikasi sehari-hari. Salah satu cabang AI yang
+sangat populer adalah Speech-to-Text, yaitu teknologi yang mengubah suara menjadi teks. Pada
+laporan ini, dibuat sebuah sistem sederhana yang mampu mengenali suara manusia dan
+mengubahnya menjadi teks menggunakan model AI Whisper. 2. Tujuan Tujuan dari project ini
+adalah: Membuat sistem pengenalan suara berbasis AI. Membuktikan cara kerja model
+Speech-to-Text menggunakan dataset audio nyata. Mengimplementasikan model Whisper Tiny
+melalui library Transformers. 3. Dasar Teori Speech-to-Text adalah proses mengubah sinyal audio
+menjadi representasi teks. Model AI seperti Whisper bekerja dengan mengubah sinyal suara
+menjadi spektrogram, kemudian menggunakan neural network untuk mengenali pola fonetik dan
+menerjemahkannya menjadi kata. 4. Alat dan Bahan Google Colab Python Library Transformers
+Model AI Whisper Tiny File audio format WAV/MP3 5. Metodologi Langkah pengerjaan:
+Menyiapkan lingkungan Python di Google Colab. Menginstal library yang diperlukan. Mengimpor
+model Whisper Tiny. Mengunggah file audio. Menjalankan proses inferensi untuk konversi suara ke
+teks. 6. Kode Program Berikut potongan kode yang digunakan: !pip install transformers datasets
+soundfile accelerate from transformers import pipeline model =
+pipeline("automatic-speech-recognition", model="openai/whisper-tiny", device="cpu") from
+google.colab import files uploaded = files.upload() audio_path = list(uploaded.keys())[0] result =
+model(audio_path) print(result["text"]) 7. Hasil dan Pembahasan Model berhasil mengubah suara
+menjadi teks dengan baik untuk durasi 3–20 detik. Akurasi sangat baik untuk suara yang jelas dan
+minim noise. Kesalahan dapat terjadi jika: Suara terlalu pelan. Lingkungan bising. Pengucapan
+tidak jelas. 8. Kesimpulan Project Speech-to-Text berbasis Whisper Tiny berhasil dilakukan dengan
+baik. Model dapat mengubah suara menjadi teks secara otomatis dan akurat. Project ini dapat
+dikembangkan lebih lanjut menjadi aplikasi real-time atau ditambahkan fitur terjemahan. 9. Daftar
+Pustaka OpenAI Whisper Documentation HuggingFace Transformers Docs Google Colab Manua
